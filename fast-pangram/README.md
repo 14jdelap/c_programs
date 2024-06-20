@@ -36,3 +36,24 @@ bool pangram(char *s) {
   }
 }
 ```
+
+Better solution: use bitwise operators
+
+- Use a bitset instead of an array to keep track of the result
+- Use bit shifting to insert the bit in the right position (from positions 0 to 25)
+
+```c
+bool ispangram(char *s) {
+  uint32_t bitset = 0;
+  for(int i = 0; i < strlen(s); ++i) {
+    int charValue = (int)tolower(s[i]);
+    if (charValue >= 97 && charValue <= 122) {
+        bitset |= (charValue-96);
+    }
+  }
+  if (bitset == 0x03ffffff) {
+    return true;
+  }
+  return false;
+}
+```

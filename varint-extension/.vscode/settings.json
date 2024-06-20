@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "__verbose_abort": "c",
+    "cstdio": "c",
+    "format": "c",
+    "__hash_table": "c",
+    "__tree": "c",
+    "stdio.h": "c",
+    "fcntl.h": "c"
+  }
+}
